@@ -63,6 +63,26 @@ header {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .header img {
+    width: 80px; /* Reduz o tamanho para telas menores */
+    height: 80px; /* Mantém a proporção */
+  }
+}
+
+@media (max-width: 480px) {
+  .header img {
+    width: 60px; /* Reduz ainda mais para telas pequenas */
+    height: 60px; /* Mantém a proporção */
+  }
+}
+
+@media (max-width: 2000px) {
+  .header img {
+    width: 60px; /* Reduz ainda mais para telas pequenas */
+    height: 60px; /* Mantém a proporção */
+  }
+}
 .custom-header {
   display: flex;
   align-items: center;
@@ -243,43 +263,58 @@ section {
   filter: grayscale(0%) brightness(1); /* Imagem colorida */
   opacity: 1; /* Torna a imagem visível */
 }
-
-
-footer {
-
-  text-align: center;
-
-  width: 100%;
-
-}
-
-footer a {
-  margin: 0 1rem;
-  color: orange;
-  text-decoration: none;
-  
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-.custom-footer {
-  background-color: #2e2e2e;
-  color: #ccc;
-  padding: 1rem 2rem;
+.footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #444;
+  justify-content: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: white;
 }
 
-.footer-icons a {
-  margin-left: 1rem;
-  transition: transform 0.2s ease, fill 0.3s ease;
+.footer .social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.footer-icons a:hover svg {
-  fill: orange;
+.footer .social-links a {
+  font-size: 2rem;  /* Tamanho inicial para desktop */
+  transition: transform 0.3s;
+}
+
+.footer .social-links a:hover {
   transform: scale(1.1);
+}
+
+.footer .footer-content {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.footer .footer-content span {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footer .social-links a {
+    font-size: 1.5rem;  /* Reduz o tamanho no tablet */
+  }
+
+  .footer .footer-content {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .social-links a {
+    font-size: 1.2rem;  /* Reduz o tamanho ainda mais em dispositivos móveis */
+  }
+
+  .footer .footer-content {
+    font-size: 0.8rem;
+  }
 }
