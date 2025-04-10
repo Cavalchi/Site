@@ -212,8 +212,9 @@ section {
 .skill-item img {
   width: 42px;
   height: auto;
-  filter: grayscale(100%) brightness(0.8);
-  transition: filter 0.4s ease;
+  filter: grayscale(100%) brightness(0.8); /* Imagem sem cor inicialmente */
+  opacity: 0; /* Imagem invisível inicialmente */
+  transition: filter 0.4s ease, opacity 0.4s ease; /* Transições para cor e visibilidade */
   z-index: 2;
 }
 
@@ -230,15 +231,17 @@ section {
 }
 
 .skill-item:hover::before {
-  width: 100%;
+  width: 100%; /* Preenche a barra de progresso ao passar o mouse */
 }
 
 .skill-item:hover span {
-  color: #000;
+  color: #000; /* Muda a cor do texto no hover */
 }
 
+/* Alteração da imagem quando a barra de progresso se preenche */
 .skill-item:hover img {
-  filter: grayscale(0%) brightness(1);
+  filter: grayscale(0%) brightness(1); /* Imagem colorida */
+  opacity: 1; /* Torna a imagem visível */
 }
 
 
